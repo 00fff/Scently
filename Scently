@@ -1,0 +1,32 @@
+class Cologne:
+    def __init__(self, name, brand, scent, season):
+        self.name = name
+        self.brand = brand
+        self.scent = scent
+        self.season = season
+   
+    def describe(self):
+        print(f"{self.name} by {self.brand}\nScent: {self.scent}\nUse when it's: {self.season}")
+
+# Collection to contain colognes
+collection = []
+
+# Add colognes
+begin = input("Welcome to Scently! Would you like to add a cologne to your collection? (y/n) ")
+
+while begin.lower() == "y":
+    cname = input("Great! Let's get started with your cologne's name: ")
+    cscent = input("What scents are in this cologne: ")
+    cbrand = input("Who created this fragrance: ")
+    cseason = input("season: ")
+   
+    new_cologne = Cologne(cname, cbrand, cscent, cseason)
+    collection.append(new_cologne)
+
+    begin = input("Would you like to add another cologne? (y/n) ")
+
+print("\nYour collection includes:\n")
+for cologne in collection:
+    cologne.describe()
+    print("")
+
